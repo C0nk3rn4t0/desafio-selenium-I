@@ -2,11 +2,15 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.math.BigDecimal;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InventoryPage {
     private final WebDriver driver;
@@ -16,6 +20,7 @@ public class InventoryPage {
     private final By title = By.className("title");
     private final By dropDownProductSort = By.className("product_sort_container");
     private final By shoppingCart = By.className("shopping_cart_link");
+    private final By inventoryItemPrice = By.className("inventory_item_price");
 
 
 
@@ -49,4 +54,26 @@ public class InventoryPage {
         driver.findElement(shoppingCart).click();
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.textToBe(title, "Your Cart"));
     }
+
+    public List<BigDecimal> getItemPrices() {
+        List<WebElement> elements = driver.findElements(inventoryItemPrice);
+        List<BigDecimal> prices = new ArrayList<>();
+
+        for (WebElement element : elements) {
+            String text = element.getText().replace("$", "");
+            prices.add(new BigDecimal(text));
+        }
+
+        return prices;
+    }
+
+    public BigDecimal getFirstItemPrice() {
+        return getItemPrices().get(0);
+    }
+
+    public BigDecimal getLastItemPrice() {
+        List<BigDecimal> prices = getItemPrices();
+        return prices.get(prices.size() - 1);
+    }
+
 }
