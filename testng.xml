@@ -2,8 +2,10 @@
 <suite name="Sauce Demo Challenge">
     <test name="Regression">
         <classes>
-            <class name="tests.LoginTest"/>
             <class name="tests.LoginAndAddItemTest"/>
+            <class name="tests.InvalidedLoginTest"/>
+            <class name="tests.OrderByProductsTest"/>
+            <class name="tests.PurchaseTest"/>
         </classes>
     </test>
 </suite>
