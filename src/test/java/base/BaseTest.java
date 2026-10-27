@@ -10,14 +10,14 @@ import java.time.Duration;
 public class BaseTest {
 
     protected WebDriver driver;
-    protected static final String URL_BASE = "https://www.saucedemo.com/";
+    protected static final String BASE_URL = "https://www.saucedemo.com/";
 
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-        driver.get(URL_BASE);
+        driver.get(BASE_URL);
     }
 
     @AfterMethod

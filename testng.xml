@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Desafio Sauce Demo">
-    <test name="Pruebas">
+<suite name="Sauce Demo Challenge">
+    <test name="Regression">
         <classes>
             <class name="tests.SmokeTest"/>
         </classes>
