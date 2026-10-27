@@ -10,6 +10,8 @@ public class InvalidedLoginTest extends BaseTest {
     private static final String USER = "locked_out_user";
     private static final String PASSWORD = "secret_sauce";
 
+    //Script 2
+
     @Test
     public void loginWithLockedUser() {
         LoginPage loginPage = new LoginPage(driver);

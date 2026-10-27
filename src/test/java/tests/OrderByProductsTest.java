@@ -16,6 +16,8 @@ public class OrderByProductsTest extends BaseTest {
     private static final String USER = "standard_user";
     private static final String PASSWORD = "secret_sauce";
 
+    //Script 3
+
     @Test
     public void sortProductsByPrice() {
         LoginPage loginPage = new LoginPage(driver);

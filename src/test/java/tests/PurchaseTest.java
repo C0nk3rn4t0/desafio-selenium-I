@@ -16,6 +16,8 @@ public class PurchaseTest extends BaseTest {
     private static final String ITEM_NAME = "Sauce Labs Backpack";
     private static final String COMPLETE_MESSAGE = "Thank you for your order!";
 
+    //Script 4
+
     @Test
     public void completePurchaseTest() {
         LoginPage loginPage = new LoginPage(driver);

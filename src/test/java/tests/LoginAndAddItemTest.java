@@ -15,6 +15,8 @@ public class LoginAndAddItemTest extends BaseTest {
     private static final String USER = "standard_user";
     private static final String PASSWORD = "secret_sauce";
 
+    //Script 1
+
     @Test
     public void addItemToCartTest() {
         LoginPage loginPage = new LoginPage(driver);
